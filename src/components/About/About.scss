@@ -1,0 +1,375 @@
+@import '../media';
+
+
+/*about us*/
+
+.about .about-us {
+    
+    display: flex;
+    flex-direction: column;
+
+    img{
+        width: 100%;
+        object-fit: cover;
+    }
+    h1 {
+        border-left: 4px black solid;
+        font-weight: lighter;
+        padding: 10px;
+        font-size: 1.9em;
+        span {
+            font-weight: bold;
+        }
+    }
+    p {
+        color: gray;
+        line-height: 1.9em;
+        letter-spacing: 2px;
+    }
+    div:nth-of-type(3),div:nth-of-type(4){
+        display: none;
+    }
+    @include pc() {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-auto-rows: 40px;
+        grid-gap: 15px;
+        div:nth-of-type(3),div:nth-of-type(4){
+            display: block;
+        }
+        div {
+            h1 {
+                border-left: 4px black solid;
+                font-weight: lighter;
+                opacity: 0;
+                padding: 10px;
+                font-size: 1.9em;
+                animation-delay: .5s;
+                animation-name: about-us-h1;
+                animation-duration: .5s;
+                animation-fill-mode: both;
+                animation-timing-function: linear;
+
+                span {
+                    font-weight: bold;
+                }
+            }
+
+            p {
+                color: gray;
+                line-height: 1.9em;
+                letter-spacing: 2px;
+                animation-name: about-us-anim;
+                animation-delay: .5s;
+                animation-duration: .5s;
+                animation-fill-mode: both;
+                animation-timing-function: linear;
+            }
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+
+        div:not(:nth-of-type(2)) {
+            opacity: 0;
+            transform: translateY(20px);
+            animation-name: about-us-anim;
+            box-shadow: 4px 4px 10px rgba($color: #000000, $alpha: .3);
+            animation-duration: 1s;
+            animation-fill-mode: both;
+            animation-timing-function: ease-in-out;
+        }
+
+        div:nth-of-type(1) {
+            grid-column: 1/5;
+            grid-row: 1/11;
+            animation-delay: calc(2*.1s);
+        }
+
+        div:nth-of-type(2) {
+            grid-column: 5/13;
+            grid-row: 1/6;
+            margin: 15px;
+
+        }
+
+        div:nth-of-type(3) {
+            grid-column: 5/9;
+            grid-row: 6/12;
+            animation-delay: calc(3*.2s);
+
+        }
+
+        div:nth-of-type(4) {
+            grid-column: 9/13;
+            grid-row: 6/10;
+            animation-delay: calc(5*.2s);
+
+        }
+    }
+
+}
+
+@keyframes about-us-anim {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0px)
+    }
+}
+@keyframes about-us-h1 {
+    from {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0px)
+    }
+}
+
+/*End about us*/
+
+/*Team*/
+.about .services{
+    padding: 50px 0;
+    @include pc(){
+        opacity: 0;
+        animation-name: sec-anim;
+        animation-duration: 1s;
+        animation-delay: 1s;
+        animation-timing-function: linear;
+        animation-fill-mode: both;
+    }
+    h1 {
+        border-left: 4px black solid;
+        font-weight: lighter;
+        display: inline-block;
+        padding: 10px;
+        font-size: 1.9em;
+        margin-bottom: 15px;
+        span {
+            font-weight: bold;
+        }
+    @include pc(){
+        margin-left: 50%;
+        transform: translate(-50% , 0);
+
+    }
+        
+    }
+    p{
+        color: gray;
+        @include pc(){
+            text-align: center;
+
+        }
+
+    }
+    .grid{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 15px;
+
+
+        @include pc(){
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 40px;
+        }
+        margin: 60px 0 10px;
+        section{
+            text-align: center;
+            padding: 25px 15px;
+           
+            i{
+                font-size: 2.5em;
+                margin: 0;
+
+            }
+            h3{
+                margin: 25px 0;
+            }
+            p{
+                letter-spacing: 2px;
+                line-height: 1.5em;
+                margin: 0;
+
+            }
+
+        }
+    }
+}
+
+.team-mobile{
+    border-left: 4px black solid;
+            font-weight: lighter;
+            display: inline-block;
+            padding: 10px;
+            font-size: 1.2em;
+            display: block;
+            @include pc(){
+                display: none;
+            }
+            margin-bottom: 15px;
+            span {
+                font-weight: bold;
+            }
+
+}
+.about .team{
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    @include pc(){
+        grid-template-columns: repeat(12, 1fr);
+    }
+    grid-auto-rows: minmax(50px ,500px);
+    grid-gap: 15px;
+    div{
+        h3,p{
+            text-align: center;
+        }
+        grid-column: span 3;
+        img{
+            width: 100%;
+            height: 75%;
+            object-fit: cover;
+        }
+    }
+    div:first-of-type{
+        grid-column: span 5;
+        display: none;
+        @include pc(){
+            display: block;
+            align-self: center;
+        }
+        h1{
+           
+            border-left: 4px black solid;
+            font-weight: lighter;
+            display: inline-block;
+            padding: 10px;
+            font-size: 1.2em;
+            @include pc(){
+                font-size: 2.2em;
+
+            }
+            margin-bottom: 15px;
+            span {
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+@keyframes sec-anim{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+/*End Team*/
+
+/*clients*/
+.clients{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 55px;
+    div:nth-of-type(2){
+        display: none;
+    }
+    div{
+        img{
+            width: 80%;
+        }
+        h1{
+            border-left: 4px black solid;
+            font-weight: lighter;
+            padding: 10px;
+            font-size: 1.9em;
+            span {
+                font-weight: bold;
+            }
+        }
+    }
+    @include tablet(){
+        grid-template-columns: 1fr 1fr 1fr;
+
+    }
+    @include pc(){
+        padding: 80px 0;
+        grid-template-columns: repeat(5, 1fr);
+        div{
+            img{
+                width:50%;
+            }
+        }
+        div:nth-of-type(2){
+            display: block;
+            grid-column: span 3;
+            align-self: center;
+            justify-self: center;
+        }       
+        div:not(:nth-of-type(2)){
+            text-align: center
+        }
+
+    }
+}
+/*End clients*/
+
+.sub{
+    padding: 160px 0;
+    position: relative;
+    @include pc(){
+        background-attachment: fixed;
+        clip-path: polygon(0 0, 100% 17%, 100% 96%, 0 78%);
+        margin-bottom: -50px;
+        h2{
+            letter-spacing: 2px;
+            font-weight: bold;
+        }
+    }
+    &::before{
+        content: '';
+        height: 100%;
+        width: 100%;
+        background-color: rgba($color: #000000, $alpha: .3);
+        top: 0;
+        left: 0;
+        position: absolute;
+        z-index: 1;
+    }
+    h2,a{
+        position: relative;
+        z-index: 2;
+    }
+    h2{
+        color: white;
+        text-shadow: 2px 2px 5px rgba($color: #000000, $alpha: .5);
+        margin-bottom: 30px;
+    }
+    a{
+        padding: 5px 10px;
+        border:1px white solid;
+        color: white;
+        text-decoration: none;
+        font-size: 1.3em;
+        transition: .8s ease-in-out;
+        &:hover{
+            background-color: white;
+            color: #000000;
+        }
+    }
+}

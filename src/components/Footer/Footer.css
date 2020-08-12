@@ -1,0 +1,24 @@
+.footer {
+  text-align: center;
+  padding: 70px 0;
+  color: gray;
+}
+
+.footer p {
+  margin: 0;
+}
+
+.footer i {
+  margin: 0 12px 30px;
+  font-size: 1.1em;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+  cursor: pointer;
+}
+
+.footer i:hover {
+  -webkit-transform: scale(1.2, 1.2);
+          transform: scale(1.2, 1.2);
+  color: black;
+}
+/*# sourceMappingURL=Footer.css.map */

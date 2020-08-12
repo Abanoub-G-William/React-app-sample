@@ -1,0 +1,83 @@
+body,
+html {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  font-family: sans-serif;
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f2f0f0;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: gray;
+}
+
+.main-app {
+  position: relative;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.flex-center {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.flex-one {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.container {
+  margin: 0 50px;
+}
+
+@media (max-width: 480px) {
+  .container {
+    margin: 0 10px;
+  }
+}
+
+@media (max-width: 960px) and (min-width: 480px) {
+  .container {
+    margin: 0 20px;
+  }
+}
+
+.go-up {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+  -webkit-transform: scale(0, 0) translateY(30px);
+          transform: scale(0, 0) translateY(30px);
+  -webkit-transition: -webkit-transform .5s ease-in-out;
+  transition: -webkit-transform .5s ease-in-out;
+  transition: transform .5s ease-in-out;
+  transition: transform .5s ease-in-out, -webkit-transform .5s ease-in-out;
+  background-color: gray;
+  border-radius: 100%;
+}
+
+.go-up:hover {
+  background-color: white;
+}
+
+.go-up:hover i {
+  color: gray;
+}
+/*# sourceMappingURL=App.css.map */

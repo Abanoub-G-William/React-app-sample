@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css?family=Acme&display=swap');
+@import '../media';
+
+.navbar {
+    padding: 15px 0;
+
+    .logo {
+        font-size: 1.8em;
+        font-family: 'Acme', sans-serif;
+        font-weight: bold;
+        cursor: default;
+    }
+
+    nav.pc a {
+        text-decoration: none;
+        color: #313131;
+        padding: 10px 20px;
+
+        &:hover {
+            transition: .6s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+            color: white;
+            background-color: gray;
+        }
+    }
+
+    @include pc {
+        nav.pc {
+            display: block;
+        }
+
+        nav.tablet {
+            display: none;
+        }
+    }
+
+    @include tablet {
+        nav.pc {
+            display: none;
+        }
+
+        nav.tablet {
+            display: block;
+        }
+    }
+    @include mobile {
+        nav.pc {
+            display: none;
+        }
+
+        nav.tablet {
+            display: block;
+        }
+    }
+}
+
+.sec-navbar {
+    transform-origin: top center;
+    transform: scaleY(0);
+    transition: transform .2s ease;
+    display: none;
+    a {
+        text-decoration: none;
+        color: #313131;
+        padding: 5px 20px;
+        display: block;
+    }
+}

@@ -1,0 +1,79 @@
+@import './components/media';
+
+body,
+html {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    font-family: sans-serif;
+    scroll-behavior: smooth;
+
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+
+::-webkit-scrollbar-track {
+    background: #f2f0f0;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: gray;
+}
+
+
+.main-app {
+    position: relative;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-center {
+    align-items: center;
+}
+
+.flex-one {
+    flex: 1;
+}
+
+.container {
+    margin: 0 50px;
+
+    @include mobile() {
+        margin: 0 10px;
+    }
+
+    @include tablet() {
+        margin: 0 20px;
+    }
+}
+
+.go-up {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    transform-origin: bottom;
+    transform: scale(0, 0) translateY(30px);
+    transition: transform .5s ease-in-out;
+    background-color: gray;
+    border-radius: 100%;
+
+    &:hover {
+        background-color: white;
+
+        i {
+            color: gray;
+        }
+    }
+
+    i {
+        color: white;
+        font-size: 1.7em;
+        transition: .5s ease-in-out;
+        padding: 3px;
+    }
+}
